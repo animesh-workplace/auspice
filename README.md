@@ -29,87 +29,38 @@ The following are helpful when beginning to use Auspice:
 
 ## Quickstart
 
-### Installation
+### NIBMG_auspice Installation
 
-Install auspice for use as a global command.
-This requires nodejs 10+. We recommend using a conda environment, but this is not the only way.
-(See [here](https://nextstrain.github.io/auspice/introduction/install) for more installation methods & help).
-
-#### Install with conda (Recommended)
-
-Create and activate a [conda](https://docs.conda.io) environment:
+Install nvm using this command:
 
 ```bash
-conda create --name auspice nodejs=10
-conda activate auspice
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
 
-Now that the conda environment is activated, install auspice:
+restart the terminal or type the following:
 
 ```bash
-npm install --global auspice
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 ```
-
-#### Install from source
+then run:
 
 ```bash
-git clone https://github.com/nextstrain/auspice.git
-cd auspice
-npm install --global .
+nvm install --lts
 ```
 
-### Obtain datasets to display
-
-To get up & running, you'll need datasets to visualise.
-(Please see the [nextstrain docs](https://nextstrain.org/docs/) for tutorials on how to run your own analyses.)
-
-If you've installed auspice from `npm` you may get datasets to display via:
+Once installed execute the following commands:
 
 ```bash
-mkdir data
-curl http://data.nextstrain.org/zika.json --compressed -o data/zika.json
-curl http://data.nextstrain.org/ncov.json --compressed -o data/ncov.json
-...
+git clone https://github.com/animesh-workplace/nibmg_auspice.git
+cd nibmg_auspice/
+npm install
+npm run dev
 ```
+Once the development server is on go to http://localhost:4000 to view the datasets
 
-If you've installed auspice from source, we have helper scripts to make all the datasets & narratives you see on nextstrain.org available locally:
-
+For production use:
 ```bash
-# from the auspice src directory
-npm run get-data
-npm run get-narratives
+npm run build
+npm run view
 ```
-
-### Run auspice
-
-```bash
-auspice view --datasetDir data
-```
-
-And view auspice in the browser at [localhost:4000](http://localhost:4000)
-
-If you are editing source code, running the following command will allow hot-reloading.
-
-```bash
-auspice develop --datasetDir data
-```
-
-### CLI (Command Line Interface)
-
-Run `auspice --help` or `auspice view --help` to see all the available command line options.
-
-## Contributor Information
-
-> We have received a number of generous offers to contribute developer effort to nextstrain (and auspice) following our work on hCoV-19. We welcome contributions! To get started, please review these resources before submitting a pull request:
-
-* [Contributor guide](https://github.com/nextstrain/.github/blob/master/CONTRIBUTING.md)  
-* [Project board with available issues](https://github.com/orgs/nextstrain/projects/5)
-* [Developer docs for Auspice](./DEV_DOCS.md)  
-
-This project strictly adheres to the [Contributor Covenant Code of Conduct](https://github.com/nextstrain/.github/blob/master/CODE_OF_CONDUCT.md).
-
-## License and copyright
-
-Copyright 2014-2020 Trevor Bedford and Richard Neher.
-
-Source code to Nextstrain is made available under the terms of the [GNU Affero General Public License](LICENSE.txt) (AGPL). Nextstrain is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
