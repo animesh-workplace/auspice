@@ -5,7 +5,7 @@
 
 ## About NIBMG_auspice
 
-**NIBMG_auspice** is an open-source project **[forked from nexstrain's auspice]** meant to harness the scientific and public health potential of pathogen genome data.
+**NIBMG_auspice** is an open-source project **[![forked from nexstrain's auspice](https://img.shields.io/npm/v/auspice.svg?style=flat)]** meant to harness the scientific and public health potential of pathogen genome data.
 We provide a continually-updated view of publicly available data with powerful analytics and visualizations showing pathogen evolution and epidemic spread.
 Our goal is to aid epidemiological understanding and improve outbreak response.
 
