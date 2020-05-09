@@ -1,11 +1,8 @@
-[![Build Status](https://travis-ci.com/nextstrain/auspice.svg?branch=master)](https://travis-ci.com/nextstrain/auspice)
-[![GitHub CI Status](https://travis-ci.com/nextstrain/auspice.svg?branch=master)](https://github.com/nextstrain/auspice/actions?query=workflow%3Aci)
-[![NPM version](https://img.shields.io/npm/v/auspice.svg?style=flat)](https://www.npmjs.com/package/auspice)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Forked from Nextstrain/auspice](https://img.shields.io/github/forks/nextstrain/auspice?label=Forked&style=social)](https://github.com/nextstrain/auspice)
 
 ## About NIBMG_auspice
 
-**NIBMG_auspice** is an open-source project [![forked from nexstrain's auspice](https://img.shields.io/github/forks/nextstrain/auspice?label=Forked&style=social)](https://github.com/nextstrain/auspice) meant to harness the scientific and public health potential of pathogen genome data.
+**NIBMG_auspice** is an open-source project **[Forked from Nextstrain's Auspice]** meant to harness the scientific and public health potential of pathogen genome data.
 We provide a continually-updated view of publicly available data with powerful analytics and visualizations showing pathogen evolution and epidemic spread.
 Our goal is to aid epidemiological understanding and improve outbreak response.
 
