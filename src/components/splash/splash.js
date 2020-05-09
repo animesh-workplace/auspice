@@ -21,10 +21,11 @@ const formatDataset = (requestPath, dispatch, changePage) => {
   return (
     <li key={requestPath}>
       <div
-        style={{color: "#5097BA", textDecoration: "none", cursor: "pointer", fontWeight: "400", fontSize: "94%"}}
+        className="button is-rounded is-primary has-text-dark"
+        style={{cursor: "pointer"}}
         onClick={() => dispatch(changePage({path: requestPath, push: true}))}
       >
-        {requestPath}
+        <p className="subtitle">{requestPath.toUpperCase()} Dataset</p>
       </div>
     </li>
   );
@@ -34,6 +35,22 @@ const SplashContent = ({available, browserDimensions, dispatch, errorMessage, ch
 
   const Header = () => (
     <>
+      <section className="hero is-info is-bold">
+        <div className="hero-body">
+          <div className="container">
+            <img
+              alt="logo"
+              width="200"
+              src={
+                require("../../images/nibmg_logo.png") // eslint-disable-line global-require
+              }
+            />          
+            <h2 className="title is-2">
+              Interactive Visualisation of Phylogenomic data
+            </h2>
+          </div>
+        </div>
+      </section>    
       <Flex justifyContent="center">
         <div style={{paddingRight: "40px"}}>
           <h1 style={{textAlign: "center", marginTop: "20px", marginLeft: "20px", fontSize: "72px", letterSpacing: "4rem"}}>
@@ -55,12 +72,15 @@ const SplashContent = ({available, browserDimensions, dispatch, errorMessage, ch
   );
 
   const Intro = () => (
+  <>
+    <p className="subtitle"></p>
     <p style={{maxWidth: 600, marginTop: 0, marginRight: "auto", marginBottom: 20, marginLeft: "auto", textAlign: "center", fontSize: 16, fontWeight: 300, lineHeight: 1.42857143}}>
       {`
         Auspice is a locally run interactive viewer for phylogeographic and other datasets.
         Auspice can be easily turned into an online web-app, such as nextstrain.org & auspice.us
       `}
     </p>
+  </>
   );
 
   const ErrorMessage = () => (
@@ -111,10 +131,10 @@ const SplashContent = ({available, browserDimensions, dispatch, errorMessage, ch
 
   return (
     <>
-      <NavBar sidebar={false}/>
-      <div className="static container">
         <Header/>
         {errorMessage ? <ErrorMessage/> : <Intro/>}
+      <NavBar sidebar={false}/>
+      <div className="static container">
         <ListAvailable type="datasets" data={available.datasets}/>
         <ListAvailable type="narratives" data={available.narratives}/>
         <Footer/>

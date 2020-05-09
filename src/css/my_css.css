@@ -22,9 +22,13 @@ font-style: normal;
 font-weight: normal;
 src: local('Noah BoldItalic'), url('/fonts/Noah-BoldItalic.woff2') format('woff2');
 }
-body, button, input, select, textarea, span, h1{
+.my_font_bold {
 	font-family: 'Noah Bold';
+}
+.my_font_normal {
+	font-family: 'Noah Regular';
 }
 html {
 	overflow-y: auto;
+	font-family: 'Noah Bold';
 }
