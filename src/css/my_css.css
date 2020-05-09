@@ -1,0 +1,30 @@
+@font-face {
+font-family: 'Noah Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Noah Regular'), url('/fonts/Noah-Regular.woff2') format('woff2');
+}
+@font-face {
+font-family: 'Noah Regular Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Noah Regular Italic'), url('/fonts/Noah-RegularItalic.woff2') format('woff2');
+}
+@font-face {
+font-family: 'Noah Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Noah Bold'), url('/fonts/Noah-Bold.woff2') format('woff2');
+}
+@font-face {
+font-family: 'Noah BoldItalic';
+font-style: normal;
+font-weight: normal;
+src: local('Noah BoldItalic'), url('/fonts/Noah-BoldItalic.woff2') format('woff2');
+}
+body, button, input, select, textarea, span, h1{
+	font-family: 'Noah Bold';
+}
+html {
+	overflow-y: auto;
+}

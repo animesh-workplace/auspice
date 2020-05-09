@@ -20,6 +20,8 @@ import "./css/static.css";
 import "./css/notifications.css";
 import "./css/boxed.css";
 import "./css/select.css";
+import "./css/bulma.min.css";
+import "./css/my_css.css";
 
 /* FONTS */
 import 'typeface-lato'; // eslint-disable-line import/extensions
