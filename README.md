@@ -3,29 +3,13 @@
 [![NPM version](https://img.shields.io/npm/v/auspice.svg?style=flat)](https://www.npmjs.com/package/auspice)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-## About Nextstrain
+## About NIBMG_auspice
 
-**Nextstrain** is an open-source project to harness the scientific and public health potential of pathogen genome data.
+**NIBMG_auspice** is an open-source project **[forked from nexstrain's auspice]** meant to harness the scientific and public health potential of pathogen genome data.
 We provide a continually-updated view of publicly available data with powerful analytics and visualizations showing pathogen evolution and epidemic spread.
 Our goal is to aid epidemiological understanding and improve outbreak response.
 
-Resulting data and inferences are available live at the website [nextstrain.org](https://nextstrain.org).
-
-## About Auspice
-
-*Definition: Observation by an augur, ie a prophetic sign.*
-
-**Auspice** is an open-source interactive web app for visualizing phylogenomic data.
-It may be used in tandem with nextstrain's bioinformatics toolkit [augur](https://github.com/nextstrain/augur) or on its own.
-Auspice may be used to explore datasets locally or run as a server to share results.
-
-## Documentation
-
-Full documentation may be found at: [nextstrain.github.io/auspice](https://nextstrain.github.io/auspice).
-The following are helpful when beginning to use Auspice:
-
-* [Overview of how Auspice fits together with other Nextstrain tools](https://nextstrain.org/docs/getting-started/introduction#open-source-tools-for-the-community)  
-* [Auspice documentation](https://nextstrain.github.io/auspice/introduction/overview)
+Resulting data and inferences are available live at the website [Coming Soon].
 
 ## Quickstart
 
