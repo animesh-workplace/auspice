@@ -19,7 +19,7 @@ const ColumnList = styled.ul`
 
 const formatDataset = (requestPath, dispatch, changePage) => {
   return (
-    <li key={requestPath}>
+    <li className="column is-narrow" key={requestPath}>
       <div
         className="button is-rounded is-primary has-text-dark"
         style={{cursor: "pointer"}}
@@ -34,7 +34,6 @@ const formatDataset = (requestPath, dispatch, changePage) => {
 const SplashContent = ({available, browserDimensions, dispatch, errorMessage, changePage}) => {
 
   const Header = () => (
-    <>
       <section className="hero is-info is-bold">
         <div className="hero-body">
           <div className="container">
@@ -46,83 +45,63 @@ const SplashContent = ({available, browserDimensions, dispatch, errorMessage, ch
               }
             />          
             <h2 className="title is-2">
-              Interactive Visualisation of Phylogenomic data
+              Interactive Visualization of Phylogenomic data
             </h2>
           </div>
         </div>
-      </section>    
-      <Flex justifyContent="center">
-        <div style={{paddingRight: "40px"}}>
-          <h1 style={{textAlign: "center", marginTop: "20px", marginLeft: "20px", fontSize: "72px", letterSpacing: "4rem"}}>
-            {"auspice"}
-          </h1>
-          <h1 style={{textAlign: "center", marginTop: "0px", fontSize: "29px"}}>
-            {"Interactive Visualisation of Phylogenomic data"}
-          </h1>
-        </div>
-        <img
-          alt="logo"
-          width="102"
-          src={
-            require("../../images/logo-light.svg") // eslint-disable-line global-require
-          }
-        />
-      </Flex>
-    </>
+      </section>
   );
 
   const Intro = () => (
-  <>
-    <p className="subtitle"></p>
-    <p style={{maxWidth: 600, marginTop: 0, marginRight: "auto", marginBottom: 20, marginLeft: "auto", textAlign: "center", fontSize: 16, fontWeight: 300, lineHeight: 1.42857143}}>
-      {`
-        Auspice is a locally run interactive viewer for phylogeographic and other datasets.
-        Auspice can be easily turned into an online web-app, such as nextstrain.org & auspice.us
-      `}
-    </p>
-  </>
+  <section className="section">
+    <div className="container">
+      <p className="subtitle">
+      Visualization of the Indian SARS-CoV-2 dataset, powered by auspice, from GISAID and 3 sequences from China included to help shape the phylogenetic tree. 
+      All sequences are at least 95% complete (i.e., at most 5% of sites have an ambiguous 'N' nucleotide).
+      </p>
+    </div>
+  </section>
   );
 
   const ErrorMessage = () => (
-    <CenterContent>
-      <div>
-        <p style={{color: "rgb(222, 60, 38)", fontWeight: 600, fontSize: "24px"}}>
-          {"😱 404, or an error has occured 😱"}
+    <section class="section">
+      <div class="container">
+        <p className="subtitle is-2 has-text-danger">
+          😱 404, or an error has occured 😱
         </p>
-        <p style={{color: "rgb(222, 60, 38)", fontWeight: 400, fontSize: "18px"}}>
+        <p className="subtitle has-text-danger">
           {`Details: ${errorMessage}`}
         </p>
-        <p style={{fontSize: "16px"}}>
-          {"If this keeps happening, or you believe this is a bug, please "}
-          <a href={"mailto:hello@nextstrain.org"}>{"get in contact with us."}</a>
-        </p>
+        <p className="subtitle">
+           If this keeps happening, or you believe this is a bug, please
+          <a href="mailto:aks1@nibmg.ac.in"> get in contact with us.</a>
+        </p>        
       </div>
-    </CenterContent>
+    </section>
   );
 
   const ListAvailable = ({type, data}) => (
-    <>
-      <div style={{fontSize: "26px"}}>
-        {`Available ${type}:`}
-      </div>
-      {
-        data ? (
-          <div style={{display: "flex", flexWrap: "wrap"}}>
-            <div style={{flex: "1 50%", minWidth: "0"}}>
-              <ColumnList width={browserDimensions.width}>
-                {data.map((d) => formatDataset(d.request, dispatch, changePage))}
-              </ColumnList>
+    <section className="section">
+      <div className="container">
+        <h2 className="title is-4">
+          {`Visualize the following ${type}:`}
+        </h2>
+        {
+          data ? (
+            <div className="columns is-mobile is-multiline">
+                <ColumnList width={browserDimensions.width}>
+                  {data.map((d) => formatDataset(d.request, dispatch, changePage))}
+                </ColumnList>
             </div>
-          </div>
-        ) : (
-          <p>
-            none found
-          </p>
-        )
-      }
-    </>
+          ) : (
+            <p>
+              none found
+            </p>
+          )
+        }
+      </div>
+    </section>
   );
-
   const Footer = () => (
     <CenterContent>
       {logos}
@@ -133,12 +112,7 @@ const SplashContent = ({available, browserDimensions, dispatch, errorMessage, ch
     <>
         <Header/>
         {errorMessage ? <ErrorMessage/> : <Intro/>}
-      <NavBar sidebar={false}/>
-      <div className="static container">
         <ListAvailable type="datasets" data={available.datasets}/>
-        <ListAvailable type="narratives" data={available.narratives}/>
-        <Footer/>
-      </div>
     </>
   );
 };

@@ -1,0 +1,16 @@
+.loader_svg {
+	max-width: 25em;
+	fill: none;
+	stroke: #222;
+	stroke-linecap: round;
+	stroke-width: 5%
+}
+use {
+	stroke: #fff;
+	animation: a 2s linear infinite
+}
+@keyframes a { 
+	to { 
+		stroke-dashoffset: 0px 
+		} 
+	}
