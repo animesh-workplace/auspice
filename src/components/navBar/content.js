@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 
-const logoPNG = require("../../images/logo-light.svg");
+const logoPNG = require("../../images/nibmg_logo.png");
 
 const AuspiceNavBarContainer = styled.div`
   display: flex;
@@ -47,7 +47,7 @@ const renderTitle = (narrativeTitle, width) => {
   }
   return (
     <Title href="/">
-      {"auspice"}
+      {"NIBMG"}
     </Title>
   );
 };
