@@ -17,11 +17,10 @@ const Title = styled.a`
   font-size: 20px;
   font-weight: 400;
   cursor: pointer;
-  letter-spacing: 1rem;
 `;
 const LogoLink = styled.a`
   padding: 5px 5px;
-  width: 50px;
+  width: 70px;
   cursor: pointer;
 `;
 const NarrativeTitle = styled.div`
