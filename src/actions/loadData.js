@@ -23,6 +23,10 @@ import { hasExtension, getExtension } from "../util/extensions";
  */
 const getDatasetFromCharon = (prefix, {type, narrative=false}={}) => {
   let path = `${getServerAddress()}/${narrative?"getNarrative":"getDataset"}`;
+  if(prefix === '/db/')
+  {
+    prefix = '/'
+  }
   path += `?prefix=${prefix}`;
   if (type) path += `&type=${type}`;
   const p = fetch(path)
@@ -196,7 +200,7 @@ const fetchDataAndDispatch = async (dispatch, url, query, narrativeBlocks) => {
         pushState: true
       });
     }
-    console.error(err, err.message);
+    // console.error(err, err.message);
     dispatch(goTo404(`Couldn't load JSONs for ${url}`));
     return undefined;
   }

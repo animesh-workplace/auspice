@@ -25,7 +25,7 @@ const formatDataset = (requestPath, dispatch, changePage) => {
         style={{cursor: "pointer"}}
         onClick={() => dispatch(changePage({path: requestPath, push: true}))}
       >
-        <p className="subtitle">{requestPath.toUpperCase()} Dataset</p>
+        <p className="subtitle">{requestPath.toUpperCase().split('/').length>1?requestPath.toUpperCase().split('/')[1]:requestPath.toUpperCase()} Dataset</p>
       </div>
     </li>
   );
@@ -74,7 +74,7 @@ const SplashContent = ({available, browserDimensions, dispatch, errorMessage, ch
         </p>
         <p className="subtitle">
            If this keeps happening, or you believe this is a bug, please
-          <a href="mailto:aks1@nibmg.ac.in"> get in contact with us.</a>
+          <a href="mailto:aks1@nibmg.ac.in"> get in contact with us hiiiiii.</a>
         </p>        
       </div>
     </section>
@@ -111,7 +111,7 @@ const SplashContent = ({available, browserDimensions, dispatch, errorMessage, ch
   return (
     <>
         <Header/>
-        {errorMessage ? <ErrorMessage/> : <Intro/>}
+        <Intro/>
         <ListAvailable type="datasets" data={available.datasets}/>
     </>
   );
